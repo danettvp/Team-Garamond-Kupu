@@ -39,6 +39,56 @@ html, body {
     padding: 20px;
 }
 
+/* MY KUPU HEADER */
+.header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* aligns children to left */
+    gap: 8px;
+    margin-top: 150px;   
+  }
+  
+  .header-text h1 {
+    font-size: 28px;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .header-text p {
+    font-size: 16px;
+    color: var(--pukepoto);
+    line-height: 1.4;
+    margin: 0;
+    text-align: left;
+  }
+  
+/* SEARCH BAR CONTAINER*/
+.search-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--pāpura);
+    border-radius: 12px;
+    padding: 6px 12px;
+    margin-top: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: transparent;
+    padding: 6px;
+  }
+  
+  /* Placeholder text color */
+  .search-bar input::placeholder {
+    color: var(--cream);
+  }
+  
+/*NAVIGATION BAR */
 .bottom-nav {
     width: 100%;
     display: flex;
