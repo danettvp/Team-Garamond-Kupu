@@ -122,21 +122,45 @@ html, body {
 
 
 /*SYLLABLES GAME*/
-body {
-    font-family: sans-serif;
-    text-align: center;
-    padding: 50px;
-}
-
-button {
-    margin: 5px;
-    padding: 15px 25px;
-    font-size: 18px;
+.game-title {
+    font-size: 24px;
+    margin-top: 200px;
+    color: #5A12AA;
+    text-align: left;  
+    margin-bottom: 10px;
+  }
+  
+  /* Syllables grid */
+  .syllables-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    justify-items: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Syllable buttons */
+  .syllable {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* circle */
+    border: none;
+    background-color: #FEA953;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
     cursor: pointer;
-}
-
-#feedback {
-    margin-top: 20px;
-    font-weight: bold;
-}
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Feedback text */
+  .feedback {
+    font-size: 18px;
+    font-weight: 600;
+    min-height: 25px;
+    color: #2C2123;
+    text-align: center;
+  }

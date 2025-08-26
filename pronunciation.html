@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syllable Game</title>
-    <link rel="stylesheet" href="https://use.typekit.net/ziy0hgl.css">
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syllable Game</title>
+  <link rel="stylesheet" href="https://use.typekit.net/ziy0hgl.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Tap the syllables in order:</h1>
+  <div class="container">
+    <h1 class="game-title">Tap the syllables in order</h1>
 
-    <button id="btn1">Pā</button>
-    <button id="btn2">ta</button>
-    <button id="btn3">ra</button>
-    <button id="btn4">tu</button>
+    <div class="syllables-grid">
+      <button class="syllable">Pā</button>
+      <button class="syllable">ma</button>
+      <button class="syllable">ru</button>
+      <button class="syllable">tu</button>
+      <button class="syllable">ma</button>
+      <button class="syllable">ta</button>
+      <button class="syllable">no</button>
+      <button class="syllable">ra</button>
+      <button class="syllable">ru</button>
+    </div>
 
-    <div id="feedback"></div>
+    <div id="feedback" class="feedback"></div>
+  </div>
 
-    <script src="javascript/script.js"></script>
+  <script src="javascript/script.js"></script>
 </body>
 </html>
