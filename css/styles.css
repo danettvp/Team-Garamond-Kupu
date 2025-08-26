@@ -174,7 +174,7 @@ html, body {
 /* MEMORY MATCH */
 .game-board {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     justify-items: center;
     width: 100%;
@@ -195,8 +195,8 @@ html, body {
     cursor: pointer;
   }
   
-  /* Flip on hover */
-  .card:hover .card-inner {
+  /* Flip when clicked */
+  .card.flipped .card-inner {
     transform: rotateY(180deg);
   }
   
@@ -216,12 +216,10 @@ html, body {
     text-align: center;
   }
   
-  /* front side visible initially */
   .front {
     background: white;
   }
   
-  /* back side rotated 180deg so it flips correctly */
   .back {
     background: #ffd700;
     transform: rotateY(180deg);

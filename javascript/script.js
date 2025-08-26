@@ -24,3 +24,15 @@ document.querySelectorAll('.syllable').forEach(button => {
     }
   });
 });
+
+
+
+/* MEMORY MATCH */
+var cards = document.querySelectorAll('.card');
+
+// click event to each card
+for (var i = 0; i < cards.length; i++) {
+  cards[i].addEventListener('click', function() {
+    this.classList.toggle('flipped');
+  });
+}
