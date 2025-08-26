@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+:root {
+    --pāpura: #5A12AA;
+    --whero: #C2070B;
+    --para-karakae: #FEA953;
+    --waiporoporo: #DCAAFF;
+    --waiporoporo2: #F4E5FF;
+    --cream: #FFFCF4;
+    --pukepoto: #081838;
+    --primary-font: 'avenir-next-lt-pro', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+    font-family: var(--primary-font);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.container {
+    width: 393px;
+    height: 852px;
+    background-color: var(--waiporoporo2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  /* nav bar to the bottom*/
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.bottom-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cream);
+    border-radius: 16px;
+    padding: 13px 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.bottom-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-nav img {
+    height: 24px;
+    width: auto;
+    display: block;
+}
+
+.bottom-nav img.camera {
+    height: 50px;  /* slightly larger */
+}
