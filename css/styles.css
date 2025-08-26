@@ -75,6 +75,7 @@ html, body {
   }
   
   .search-bar input {
+    font: var(--primary-font);
     flex: 1;
     border: none;
     outline: none;
@@ -115,3 +116,27 @@ html, body {
 .bottom-nav img.camera {
     height: 50px;  /* slightly larger */
 }
+
+
+
+
+
+/*SYLLABLES GAME*/
+body {
+    font-family: sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+
+button {
+    margin: 5px;
+    padding: 15px 25px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#feedback {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
