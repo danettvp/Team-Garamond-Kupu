@@ -130,6 +130,7 @@ html, body {
     margin-bottom: 10px;
   }
   
+
   /* Syllables grid */
   .syllables-grid {
     display: grid;
@@ -142,6 +143,7 @@ html, body {
   
   /* Syllable buttons */
   .syllable {
+    font-family: var(--primary-font);
     width: 80px;
     height: 80px;
     border-radius: 50%; /* circle */
@@ -155,7 +157,7 @@ html, body {
     align-items: center;
     justify-content: center;
   }
-  
+
   /* Feedback text */
   .feedback {
     font-size: 18px;
@@ -164,3 +166,64 @@ html, body {
     color: #2C2123;
     text-align: center;
   }
+
+
+  /*MEMORY MATCH */
+
+  .memory {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers heading with cards */
+  }
+
+  .memory h1 {
+    margin-bottom: 20px; /* space between heading and cards */
+  }
+
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(5, 120px);
+    grid-gap: 10px;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 120px;
+    height: 60px;
+    position: relative;
+    perspective: 300px;
+    cursor: pointer;
+  }
+  
+  .front, .back {
+    width: 120px;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+    font-size: 14px;
+  }
+  
+  .front {
+    background: white;
+  }
+  
+  .back {
+    background: #ffd700;
+    transform: rotateY(180deg);
+  }
+  
+  .card:hover .front {
+    transform: rotateY(180deg);
+  }
+  
+  .card:hover .back {
+    transform: rotateY(0deg);
+  }
+  
