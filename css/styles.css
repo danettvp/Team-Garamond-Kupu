@@ -43,7 +43,7 @@ html, body {
 .header-text {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;  /* aligns children to left */
+    align-items: flex-start;
     gap: 8px;
     margin-top: 150px;   
   }
