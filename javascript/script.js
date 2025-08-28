@@ -30,6 +30,8 @@ document.querySelectorAll('.syllable').forEach(button => {
 
 var cards = document.querySelectorAll('.card');
 var flippedCards = [];
+var matchedPairs = 0; // keep count of matches
+var totalPairs = 5;   // update if more cards are added
 
 function flipCard() {
   // don't flip if card is already flipped
@@ -57,6 +59,7 @@ function flipCard() {
     if (card1Text == 'The bottle is big.' && card2Text == 'He nui te pātara.') {
       isMatch = true;
     }
+    
     if (card1Text == 'He nui te pātara.' && card2Text == 'The bottle is big.') {
       isMatch = true;
     }
@@ -93,9 +96,13 @@ function flipCard() {
       isMatch = true;
     }
     
-    if (isMatch == true) {
-      //cards match and array is reset
-      flippedCards = [];
+    if (isMatch) {
+      matchedPairs++; 
+      flippedCards = []; //cards match and array is reset
+      //message when all cards are flipped
+      if (matchedPairs === totalPairs) {
+        alert("🎉 Well done! You matched them all!");
+      }
     } else {
       //cards don't match,wait then flip back
       setTimeout(function() {
