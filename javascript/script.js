@@ -1,26 +1,42 @@
 const correctSequence = ['Pā', 'ta', 'ra'];
-let step = 0;
+let step = 0; // current step in sequence
+let wrongClicks = 0; //count consecutive wrong clicks
 
 const feedback = document.getElementById('feedback');
+const syllables = document.querySelectorAll('.syllable');
 
-document.querySelectorAll('.syllable').forEach(button => {
+syllables.forEach(button => {
   button.addEventListener('click', () => {
+    // turn clicked button orange
+    button.classList.add('clicked');
+
     if (button.textContent === correctSequence[step]) {
-      button.classList.add('selected');
+      //correct click
       step++;
+      wrongClicks = 0; //reset wrong clicks
       feedback.textContent = '';
       feedback.className = 'feedback';
+
       if (step === correctSequence.length) {
         feedback.textContent = 'Correct! You spelled Pātara!';
         feedback.className = 'feedback success';
         step = 0;
-        document.querySelectorAll('.syllable').forEach(btn => btn.classList.remove('selected'));
+        syllables.forEach(btn => btn.classList.remove('clicked'));
       }
     } else {
-      feedback.textContent = 'Try again!';
-      feedback.className = 'feedback error';
-      step = 0;
-      document.querySelectorAll('.syllable').forEach(btn => btn.classList.remove('selected'));
+      // wrong click
+      wrongClicks++;
+      if (wrongClicks >= 2) {
+        feedback.textContent = 'Try again!';
+        feedback.className = 'feedback error';
+        step = 0;
+        wrongClicks = 0;
+
+        //Reset buttons after brief delay so user sees last click
+        setTimeout(() => {
+          syllables.forEach(btn => btn.classList.remove('clicked'));
+        }, 800);
+      }
     }
   });
 });
@@ -118,3 +134,22 @@ function flipCard() {
 for (var i = 0; i < cards.length; i++) {
   cards[i].addEventListener('click', flipCard);
 }
+
+
+
+/*Fill in theb lank*/
+
+const falseOptions = document.querySelectorAll('.false-option');
+const falseFeedback = document.getElementById('false-feedback');
+
+falseOptions.forEach(option => {
+  option.addEventListener('click', () => {
+    if(option.dataset.correct === "true") {
+      falseFeedback.textContent = 'Correct!';
+      falseFeedback.style.color = 'green';
+    } else {
+      falseFeedback.textContent = 'Try again!';
+      falseFeedback.style.color = 'red';
+    }
+  });
+});

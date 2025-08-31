@@ -141,34 +141,37 @@ html, body {
     margin-bottom: 30px;
   }
   
-  /* Syllable buttons */
+  /*Syllable buttons*/
   .syllable {
     font-family: var(--primary-font);
     width: 80px;
     height: 80px;
-    border-radius: 50%; /* circle */
+    border-radius: 50%;
     border: none;
-    background-color: #FEA953;
-    color: white;
+    background-color: var(--waiporoporo);
+    color: var(--pukepoto);
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.3s;
   }
-
-  /* Feedback text */
-  .feedback {
-    font-size: 18px;
-    font-weight: 600;
-    min-height: 25px;
-    color: #2C2123;
-    text-align: center;
+  
+  .syllable.clicked { /* orange when clicked */
+    background-color: #F8CFC1; 
+    border: 6px solid #FEA953;
   }
-
-
-
+  
+  .feedback.success {
+    color: #27ae60;
+  }
+  
+  .feedback.error {
+    color: #e74c3c;
+  }
+  
 
 
 /* MEMORY MATCH */
@@ -230,3 +233,20 @@ html, body {
     object-fit: cover;
     border-radius: 6px; 
   }
+
+
+
+
+
+
+  /*FILL IN THE BLANK*/
+  .false-options button {
+    padding: 5px 10px;
+    margin: 5px 5px 0 0;
+  }
+  
+  #false-feedback {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
