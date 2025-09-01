@@ -1,6 +1,5 @@
 const correctSequence = ['Pā', 'ta', 'ra'];
 let step = 0; // current step in sequence
-let wrongClicks = 0; //count consecutive wrong clicks
 
 const feedback = document.getElementById('feedback');
 const syllables = document.querySelectorAll('.syllable');
@@ -10,36 +9,45 @@ syllables.forEach(button => {
     // turn clicked button orange
     button.classList.add('clicked');
 
+    // Check if clicked syllable matches the correct sequence at this step
     if (button.textContent === correctSequence[step]) {
-      //correct click
       step++;
-      wrongClicks = 0; //reset wrong clicks
       feedback.textContent = '';
       feedback.className = 'feedback';
 
+      // sequence complete
       if (step === correctSequence.length) {
         feedback.textContent = 'Correct! You spelled Pātara!';
         feedback.className = 'feedback success';
         step = 0;
+        //reset buttons
         syllables.forEach(btn => btn.classList.remove('clicked'));
+
+        // Redirect to Ka Pai page after delay
+        setTimeout(() => {
+          window.location.href = 'ka-pai.html';
+        }, 1000);
       }
     } else {
-      // wrong click
-      wrongClicks++;
-      if (wrongClicks >= 2) {
-        feedback.textContent = 'Try again!';
-        feedback.className = 'feedback error';
-        step = 0;
-        wrongClicks = 0;
+      // Wrong syllable clicked → reset immediately
+      feedback.textContent = 'Try again!';
+      feedback.className = 'feedback error';
+      step = 0;
+      // Reset buttons after short delay
+      setTimeout(() => {
+        syllables.forEach(btn => btn.classList.remove('clicked'));
+      }, 1200);
 
-        //Reset buttons after brief delay so user sees last click
-        setTimeout(() => {
-          syllables.forEach(btn => btn.classList.remove('clicked'));
-        }, 800);
-      }
+      //clear the feedback message after 2 seconds
+      setTimeout(() => {
+        feedback.textContent = '';
+        feedback.className = 'feedback';
+      }, 2000);
     }
   });
 });
+
+
 
 
 /* MEMORY MATCH GAME */
