@@ -115,9 +115,12 @@ function flipCard() {
     if (isMatch) {
       matchedPairs++; 
       flippedCards = []; //cards match and array is reset
-      //message when all cards are flipped
+      //ka pai page when all cards are correct
       if (matchedPairs === totalPairs) {
-        alert("🎉 Well done! You matched them all!");
+        // short delay so the last card flip shows
+        setTimeout(function() {
+          window.location.href = "ka-pai.html";
+        }, 1000);
       }
     } else {
       //cards don't match,wait then flip back
@@ -129,6 +132,7 @@ function flipCard() {
     }
   }
 }
+
 
 //add click event to each card
 for (var i = 0; i < cards.length; i++) {
