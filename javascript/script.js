@@ -163,5 +163,12 @@ falseOptions.forEach(option => {
       falseFeedback.textContent = 'Try again!';
       falseFeedback.style.color = 'red';
     }
+
+    // feedback shows up for 1.5 seconds
+    setTimeout(() => {
+      falseFeedback.textContent = '';
+    }, 1500);
   });
 });
+
+

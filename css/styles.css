@@ -253,14 +253,55 @@ html, body {
 
 
 
-  /*FILL IN THE BLANK*/
-  .false-options button {
-    padding: 5px 10px;
-    margin: 5px 5px 0 0;
-  }
-  
-  #false-feedback {
-    margin-top: 10px;
-    font-weight: bold;
-  }
-  
+/* FILL-IN-THE-BLANK */
+.fill-blank {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-family: var(--primary-font);
+}
+
+.fill-blank p {
+  font-size: 20px;
+  color: #5A12AA;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+  font-family: var(--primary-font);
+}
+
+.false-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.false-option {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--waiporoporo);
+  color: var(--pukepoto);
+  transition: background-color 0.3s, transform 0.2s;
+  font-family: var(--primary-font);
+}
+
+.false-option:hover {
+  background-color: var(--para-karakae);
+  transform: scale(1.05);
+}
+
+#false-feedback {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  font-size: 18px;
+  font-family: var(--primary-font);
+}
