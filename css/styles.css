@@ -273,6 +273,10 @@ html, body {
   font-family: var(--primary-font);
 }
 
+.fill-blank p.sub-text {
+  font-size: 14px;
+}
+
 .false-options {
   display: flex;
   flex-wrap: wrap;
