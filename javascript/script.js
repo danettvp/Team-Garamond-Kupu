@@ -1,4 +1,4 @@
-const correctSequence = ['Pā', 'ta', 'ra'];
+const correctSequence = ['Ku', 'rī'];
 let step = 0; // current step in sequence
 
 const feedback = document.getElementById('feedback');
@@ -17,7 +17,7 @@ syllables.forEach(button => {
 
       // sequence complete
       if (step === correctSequence.length) {
-        feedback.textContent = 'Correct! You spelled Pātara!';
+        feedback.textContent = 'Correct! You spelled Kurī!';
         feedback.className = 'feedback success';
         step = 0;
         //reset buttons
@@ -26,7 +26,7 @@ syllables.forEach(button => {
         // Redirect to Ka Pai page after delay
         setTimeout(() => {
           window.location.href = 'ka-pai.html';
-        }, 1000);
+        }, 9000);
       }
     } else {
       // Wrong syllable clicked → reset immediately
@@ -80,43 +80,43 @@ function flipCard() {
     var isMatch = false;
     
     //match 1
-    if (card1Text == 'The bottle is big.' && card2Text == 'He nui te pātara.') {
+    if (card1Text == 'The dog is big.' && card2Text == 'He nui te kurī.') {
       isMatch = true;
     }
     
-    if (card1Text == 'He nui te pātara.' && card2Text == 'The bottle is big.') {
+    if (card1Text == 'He nui te kurī.' && card2Text == 'The dog is big.') {
       isMatch = true;
     }
     
     //match 2
-    if (card1Text == 'The bottle is on top.' && card2Text == 'Kei runga te pātara.') {
+    if (card1Text == 'The dog is outside.' && card2Text == 'Kei waho te kurī.') {
       isMatch = true;
     }
-    if (card1Text == 'Kei runga te pātara.' && card2Text == 'The bottle is on top.') {
+    if (card1Text == 'The dog is outside.' && card2Text == 'Kei waho te kurī.') {
       isMatch = true;
     }
     
     //match 3
-    if (card1Text == 'This is a bottle.' && card2Text == 'He pātara tēnei.') {
+    if (card1Text == 'This is a dog.' && card2Text == 'He kurī tēnei.') {
       isMatch = true;
     }
-    if (card1Text == 'He pātara tēnei.' && card2Text == 'This is a bottle.') {
+    if (card1Text == 'He kurī tēnei.' && card2Text == 'This is a dog.') {
       isMatch = true;
     }
     
     //match 4
-    if (card1Text == 'The bottle is underneath.' && card2Text == 'Kei raro te pātara.') {
+    if (card1Text == 'Here is my dog.' && card2Text == 'Anei tāku kurī.') {
       isMatch = true;
     }
-    if (card1Text == 'Kei raro te pātara.' && card2Text == 'The bottle is underneath.') {
+    if (card1Text == 'Anei tāku kurī.' && card2Text == 'Here is my dog.') {
       isMatch = true;
     }
     
     //match 5
-    if (card1Text == 'The bottle is small.' && card2Text == 'He iti te pātara.') {
+    if (card1Text == 'The dog is small.' && card2Text == 'He iti te kurī.') {
       isMatch = true;
     }
-    if (card1Text == 'He iti te pātara.' && card2Text == 'The bottle is small.') {
+    if (card1Text == 'He iti te kurī.' && card2Text == 'The dog is small.') {
       isMatch = true;
     }
     
@@ -167,7 +167,7 @@ falseOptions.forEach(option => {
     // feedback shows up for 1.5 seconds
     setTimeout(() => {
       falseFeedback.textContent = '';
-    }, 1500);
+    }, 4000);
   });
 });
 
