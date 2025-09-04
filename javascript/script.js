@@ -89,10 +89,10 @@ function flipCard() {
     }
     
     //match 2
-    if (card1Text == 'The dog is outside.' && card2Text == 'Kei waho te kurī.') {
+    if (card1Text == 'Kei waho te kurī.' && card2Text == 'Kei waho te kurī.') {
       isMatch = true;
     }
-    if (card1Text == 'The dog is outside.' && card2Text == 'Kei waho te kurī.') {
+    if (card1Text == 'The dog is outside.' && card2Text == 'The dog is outside.') {
       isMatch = true;
     }
     

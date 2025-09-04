@@ -1,332 +1,416 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
-    --pāpura: #5A12AA;
-    --whero: #C2070B;
-    --para-karakae: #FEA953;
-    --waiporoporo: #DCAAFF;
-    --waiporoporo2: #F4E5FF;
-    --cream: #FFFCF4;
-    --pukepoto: #081838;
-    --primary-font: 'avenir-next-lt-pro', sans-serif;
+  --pāpura: #5A12AA;
+  --whero: #C2070B;
+  --para-karakae: #FEA953;
+  --waiporoporo: #DCAAFF;
+  --waiporoporo2: #F4E5FF;
+  --cream: #FFFCF4;
+  --pukepoto: #081838;
+  --primary-font: 'avenir-next-lt-pro', sans-serif;
 }
 
 html, body {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #eee;
-    font-family: var(--primary-font);
-    font-weight: 400;
-    font-style: normal;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  font-family: var(--primary-font);
+  font-weight: 400;
+  font-style: normal;
 }
 
 .container {
-    width: 393px;
-    height: 852px;
-    background-color: var(--waiporoporo2);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;  /* nav bar to the bottom*/
-    align-items: center;
-    text-align: center;
-    padding: 20px;
+  width: 393px;
+  height: 852px;
+  background-color: var(--waiporoporo2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
 }
 
-/* MY KUPU HEADER */
+.status-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--pukepoto);
+  margin-bottom: 40px;
+}
+
 .header-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    margin-top: 150px;   
-  }
-  
-  .header-text h1 {
-    font-size: 28px;
-    margin: 0;
-    text-align: left;
-  }
-  
-  .header-text p {
-    font-size: 16px;
-    color: var(--pukepoto);
-    line-height: 1.4;
-    margin: 0;
-    text-align: left;
-  }
-  
-/* SEARCH BAR CONTAINER*/
-.search-bar {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    background-color: var(--pāpura);
-    border-radius: 12px;
-    padding: 6px 12px;
-    margin-top: 20px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
-  
-  .search-bar input {
-    font: var(--primary-font);
-    flex: 1;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    background-color: transparent;
-    padding: 6px;
-  }
-  
-  /* Placeholder text color */
-  .search-bar input::placeholder {
-    color: var(--cream);
-  }
-  
-/*NAVIGATION BAR */
-.bottom-nav {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--cream);
-    border-radius: 16px;
-    padding: 13px 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  width: 100%;
 }
 
-.bottom-nav a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.header-text h1 {
+  font-size: 28px;
+  margin: 0;
+  text-align: left;
+  color: var(--pukepoto);
 }
 
-.bottom-nav img {
-    height: 24px;
-    width: auto;
-    display: block;
+.header-text p {
+  font-size: 16px;
+  color: var(--pukepoto);
+  line-height: 1.4;
+  margin: 0;
+  text-align: left;
 }
 
-.bottom-nav img.camera {
-    height: 50px;  /* slightly larger */
+.game-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
 }
 
+.game-button {
+  width: 100%;
+  padding: 20px;
+  border: none;
+  border-radius: 16px;
+  font-family: var(--primary-font);
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  position: relative;
+  text-decoration: none;
+}
 
+.game-button.purple {
+  background-color: var(--pāpura);
+  color: white;
+}
 
+.game-button.orange {
+  background-color: var(--para-karakae);
+  color: var(--pukepoto);
+}
+
+.game-button.dark {
+  background-color: var(--pukepoto);
+  color: white;
+}
+
+.game-button h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.game-button p {
+  font-size: 14px;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.xp-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.back-link {
+  color: var(--pukepoto);
+  text-decoration: underline;
+  font-size: 16px;
+  margin-top: auto;
+  margin-bottom: 40px;
+}
 
 
 /*SYLLABLES GAME*/
 .game-title {
-    font-size: 20px;
-    margin-top: 50px;
-    color: var(--pāpura);
-    text-align: left;  
-    margin-bottom: 40px;
-    align-self: flex-start; /* forces it left inside flexbox */
-  }
+  font-size: 20px;
+  margin-top: 50px;
+  color: var(--pāpura);
+  text-align: left;  
+  margin-bottom: 40px;
+  align-self: flex-start; /* forces it left inside flexbox */
+}
 
-  .word-title {
-    text-align: center;
-    margin: 10px 0;
-    font-weight: 400;
-    font-size: 1.5rem;
-    color: var(--pāpura);
-  }
-  
-  .blanks {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 15px 0;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 50px;
-    color: var(--pāpura);
-  }
-  
-  
+.word-title {
+  text-align: center;
+  margin: 10px 0;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: var(--pāpura);
+}
 
-  /* Syllables grid */
-  .syllables-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    width: 100%;
-    justify-items: center;
-    margin-bottom: 30px;
-  }
-  
-  /*Syllable buttons*/
-  .syllable {
-    font-family: var(--primary-font);
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: none;
-    background-color: var(--waiporoporo);
-    color: var(--pukepoto);
-    font-size: 20px;
-    font-weight: 900;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s;
-  }
-  
-  .syllable.clicked { /* orange when clicked */
-    background-color: #F8CFC1; 
-    border: 6px solid #FEA953;
-  }
-  
-  .feedback.success {
-    color: #27ae60;
-  }
-  
-  .feedback.error {
-    color: #e74c3c;
-  }
-  
+.blanks {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 15px 0;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+  color: var(--pāpura);
+}
 
+/* Syllables grid */
+.syllables-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  justify-items: center;
+  margin-bottom: 30px;
+}
+
+/*Syllable buttons*/
+.syllable {
+  font-family: var(--primary-font);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--waiporoporo);
+  color: var(--pukepoto);
+  font-size: 20px;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.syllable.clicked { /* orange when clicked */
+  background-color: #F8CFC1; 
+  border: 6px solid #FEA953;
+}
+
+.feedback.success {
+  color: #27ae60;
+}
+
+.feedback.error {
+  color: #e74c3c;
+}
 
 /* MEMORY MATCH */
 .game-board {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    justify-items: center;
-    width: 100%;
-  }
-  
-  .card {
-    width: 170px;   /* bigger */
-    height: 120px;  /* taller */
-    perspective: 600px;
-  }  
-  
-  .card-inner {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transition: transform 0.5s;
-    transform-style: preserve-3d;
-    cursor: pointer;
-  }
-  
-  /* Flip when clicked */
-  .card.flipped .card-inner {
-    transform: rotateY(180deg);
-  }
-  
-  /* Front and back sides */
-  .front, .back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    border: 2px solid #A054CA;
-    border-radius: 10px;
-    text-align: center;
-  }
-  
-  .back {
-    background: var(--waiporoporo);
-    transform: rotateY(180deg);
-  }
-  
-  .front img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 6px; 
-  }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  justify-items: center;
+  width: 100%;
+}
 
-  /* Card pair colours */
-  .pair1 { 
-    background-color: #F8CFC1; 
-    border: 2px solid #FEA953;
-  }
+.card {
+  width: 170px;   /* bigger */
+  height: 120px;  /* taller */
+  perspective: 600px;
+}  
 
-  .pair2 {
-    background-color: #FF9EA0; 
-    border: 2px solid #C20739;
-  }  
-  
-  .pair3 { 
-    background-color: #FFFCF4; 
-    border: 2px solid #8D8D8D;
-  } 
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
 
-  .pair4 { 
-    background-color: #C5D7FB; 
-    border: 2px solid #223458;
-  }
+/* Flip when clicked */
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
 
+/* Front and back sides */
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  border: 2px solid #A054CA;
+  border-radius: 10px;
+  text-align: center;
+}
 
+.back {
+  background: var(--waiporoporo);
+  transform: rotateY(180deg);
+}
+
+.front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px; 
+}
+
+/* Card pair colours */
+.pair1 { 
+  background-color: #F8CFC1; 
+  border: 2px solid #FEA953;
+}
+
+.pair2 {
+  background-color: #FF9EA0; 
+  border: 2px solid #C20739;
+}  
+
+.pair3 { 
+  background-color: #FFFCF4; 
+  border: 2px solid #8D8D8D;
+} 
+
+.pair4 { 
+  background-color: #C5D7FB; 
+  border: 2px solid #223458;
+}
 
 /* FILL-IN-THE-BLANK */
 .fill-blank {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
-  margin-bottom: 30px;
-  font-family: var(--primary-font);
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 40px;
+margin-bottom: 30px;
+font-family: var(--primary-font);
 }
 
 .fill-blank p {
-  font-size: 20px;
-  color: #5A12AA;
-  text-align: center;
-  width: 100%;
-  margin-bottom: 20px;
-  font-family: var(--primary-font);
+font-size: 20px;
+color: #5A12AA;
+text-align: center;
+width: 100%;
+margin-bottom: 20px;
+font-family: var(--primary-font);
 }
 
 .fill-blank p.sub-text {
-  font-size: 14px;
+font-size: 14px;
 }
 
 .false-options {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 10px;
+width: 100%;
 }
 
 .false-option {
-  padding: 10px 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 12px;
-  background-color: var(--waiporoporo);
-  color: var(--pukepoto);
-  transition: background-color 0.3s, transform 0.2s;
-  font-family: var(--primary-font);
+padding: 10px 15px;
+font-size: 16px;
+border: none;
+border-radius: 12px;
+background-color: var(--waiporoporo);
+color: var(--pukepoto);
+transition: background-color 0.3s, transform 0.2s;
+font-family: var(--primary-font);
 }
 
 .false-option:hover {
-  background-color: var(--para-karakae);
-  transform: scale(1.05);
+background-color: var(--para-karakae);
+transform: scale(1.05);
 }
 
 #false-feedback {
-  margin-top: 15px;
-  font-weight: bold;
+margin-top: 15px;
+font-weight: bold;
+text-align: center;
+width: 100%;
+font-size: 18px;
+font-family: var(--primary-font);
+}
+
+
+
+
+/* KA PAI PAGE */
+
+.ka-pai-page .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* center vertically */
+  align-items: center;
   text-align: center;
+  height: 100%; /* take full viewport height */
+}
+
+.ka-pai {
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--pukepoto);
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+.ka-pai-page .xp-badge {
+  position: static; /* removes absolute positioning */
+  margin-bottom: 20px; /* spacing from title */
+}
+
+.message {
+  color: var(--pukepoto);
+  font-size: 24px;
+  line-height: 1.4;
+  margin-bottom: 80px;
+  max-width: 300px;
+}
+
+.message em {
+  font-style: italic;
+  color: var(--para-karakae);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   width: 100%;
-  font-size: 18px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.buttons a,
+.buttons button {
+  background-color: var(--para-karakae);
+  color: var(--pukepoto);
+  padding: 15px 30px;
+  border: none;
+  border-radius: 16px;
   font-family: var(--primary-font);
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
